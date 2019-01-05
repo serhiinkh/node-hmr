@@ -1,7 +1,8 @@
 # node-hmr
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/nicebro/node-hmr.svg?branch=master)](https://travis-ci.org/nicebro/node-hmr)
 [![Coverage Status](https://coveralls.io/repos/github/nicebro/node-hmr/badge.svg?branch=master)](https://coveralls.io/github/nicebro/node-hmr?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## 🔥 Hot Module Replacement for Node.js
 This module adds hot module replacement support for node.js applications, it intended as an alternative to such tools like nodemon. Reloading modules while an application is running significantly faster than full reloading which in some cases may add additional downtime to a development process.
