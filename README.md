@@ -1,11 +1,12 @@
 # node-hmr
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Coverage Status](https://coveralls.io/repos/github/nicebro/node-hmr/badge.svg?branch=master)](https://coveralls.io/github/nicebro/node-hmr?branch=master)
 
 ## 🔥 Hot Module Replacement for Node.js
-This module adds hot module replacement support for node.js applications, it intended as alternative to such tools like nodemon. Reloading modules while application is running significantly faster than full reloading which in some cases may add additional downtime to development process.
+This module adds hot module replacement support for node.js applications, it intended as an alternative to such tools like nodemon. Reloading modules while an application is running significantly faster than full reloading which in some cases may add additional downtime to a development process.
 
-Inspired by this artice [https://codeburst.io/dont-use-nodemon-there-are-better-ways-fc016b50b45e](https://codeburst.io/dont-use-nodemon-there-are-better-ways-fc016b50b45e)
+Inspired by this article [https://codeburst.io/dont-use-nodemon-there-are-better-ways-fc016b50b45e](https://codeburst.io/dont-use-nodemon-there-are-better-ways-fc016b50b45e)
 
 
 ## API
@@ -15,9 +16,8 @@ hmr(callback, [options])
 
 * `callback` Function which will be called each time when some file was changed
 * `options` Options object. Optional
-  * `debug` Show list of modules which was removed from cache. Default: false
-  instantiating the watching as chokidar discovers these file paths (before the `ready` event).
-  * `watchDir` Relative path to directory to be watched recursively. Default: directory of current module
+  * `debug` Show list of modules which was removed from the cache. Default: false
+  * `watchDir` Relative path to the directory to be watched recursively. Default: directory of the  current module
   * `chokidar` Chokidar [options](https://github.com/paulmillr/chokidar#api)
 
 ## Usage
@@ -30,7 +30,7 @@ hmr(() => {
 ```
 ## How to use it with frameworks
 You should split your application into two parts first is server setup and second is application module.
-Bellow are examples of how to use it with some popular frameworks.
+Below are examples of how to use it with some popular frameworks.
 
 ## Express.js with HMR example
 
@@ -92,8 +92,8 @@ server.listen(3000);
 ```
 
 ## Limitations
-In some cases HMR may not work correctly with libraries which using some internal caching storage
-Mongoose is the example of one. If you see this error message ```Cannot overwrite `User` model once compiled``` the workaround could be add following syntax to each model declaration, but in this case changes to the model will not be 'hot reloaded'.
+In some cases, HMR may not work correctly with libraries which using some internal caching storage
+Mongoose is the example of one. If you see this error message ```Cannot overwrite `User` model once compiled``` the workaround could be add the following syntax to each model declaration, but in this case changes to the model will not be 'hot reloaded'.
 ```js
 module.exports = mongoose.models.Users || mongoose.model('Users', UsersSchema);
 ```
