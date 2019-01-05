@@ -9,7 +9,7 @@
   "author": "Serhii Nakhankov",
   "license": "MIT",
   "engines": {
-    "node" : ">=8.6.0"
+    "node": ">=8.6.0"
   },
   "keywords": [
     "hot",
@@ -24,8 +24,9 @@
     "chokidar": "^2.0.4"
   },
   "devDependencies": {
-    "jest": "^23.6.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.11.1",
-    "eslint-plugin-jest": "^22.1.2"
+    "eslint-plugin-jest": "^22.1.2",
+    "jest": "^23.6.0"
   }
 }
