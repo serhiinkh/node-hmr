@@ -16,7 +16,7 @@ class HMR {
   }
 
   setupWatcher() {
-    return chokidar.watch(['**/*.js'], {
+    return chokidar.watch(this.watchFilePatterns, {
       ignoreInitial: true,
       cwd: this.watchDir,
       ignored: [
@@ -55,6 +55,12 @@ class HMR {
   init(callback, options = {}) {
     this.callback = callback;
     this.options = options;
+
+    let watchFilePatterns = ["**/*.js"];
+    if (options.watchFilePatterns) {
+      watchFilePatterns = options.watchFilePatterns;
+    }
+    this.watchFilePatterns = watchFilePatterns;
 
     let watchDir = path.dirname(this.parentModuleName);
     if (options.watchDir) {

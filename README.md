@@ -19,6 +19,7 @@ hmr(callback, [options])
 * `options` Options object. Optional
   * `debug` Show list of modules which was removed from the cache. Default: false
   * `watchDir` Relative path to the directory to be watched recursively. Default: directory of the  current module
+  * `watchFilePatterns` Files that will trigger reload on change. Default: JS files
   * `chokidar` Chokidar [options](https://github.com/paulmillr/chokidar#api)
 
 ## Usage
@@ -56,7 +57,7 @@ let app;
 
 hmr(() => {
   app = require('../app');
-}, { watchDir: '../' });
+}, { watchDir: '../', watchFilePatterns: ['**/*.js'] });
 
 const server = http.createServer((req, res) => app(req, res));
 
