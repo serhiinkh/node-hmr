@@ -46,6 +46,7 @@ describe('HMR', () => {
     expect(hmr.instance.options.watchDir).toEqual(watchDir);
     expect(hmr.instance.options.debug).toEqual(debug);
     expect(hmr.instance.watchDir).toEqual(watchDirAbsolute);
+    expect(hmr.instance.watchFilePatterns).toEqual(['**/*.js']);
 
     const moduleName = 'module-test.js';
     const moduleNameAbsolute = path.resolve(__dirname, watchDir, moduleName);
@@ -63,4 +64,11 @@ describe('HMR', () => {
       }),
     );
   });
+
+  it('should handle watchFilePatterns options', () => {
+    const watchFilePatterns = 'test';
+    hmr(mockCallback, { watchFilePatterns });
+    expect(hmr.instance.watchFilePatterns).toEqual(watchFilePatterns);
+  });
+
 });
