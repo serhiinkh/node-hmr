@@ -4,7 +4,8 @@
   "description": "🔥 HMR for Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "jest ./tests --coverage"
+    "test": "jest ./tests --coverage",
+    "release": "standard-version"
   },
   "author": "Serhii Nakhankov",
   "license": "MIT",
@@ -28,12 +29,13 @@
     "reload"
   ],
   "dependencies": {
-    "chokidar": "^2.0.4"
+    "chokidar": "^3.5.2"
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
-    "eslint": "^5.11.1",
+    "eslint": "^8.2.0",
     "eslint-plugin-jest": "^22.1.2",
-    "jest": "^23.6.0"
+    "jest": "^27.3.1",
+    "standard-version": "^9.3.2"
   }
 }
