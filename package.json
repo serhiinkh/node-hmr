@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nicebro/node-hmr"
+    "url": "https://github.com/serhiinkh/node-hmr"
   },
   "bugs": {
-    "url": "https://github.com/nicebro/node-hmr/issues"
+    "url": "https://github.com/serhiinkh/node-hmr/issues"
   },
   "keywords": [
     "hot",
