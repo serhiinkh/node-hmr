@@ -1,7 +1,7 @@
 # node-hmr
 
-[![Build Status](https://travis-ci.org/nicebro/node-hmr.svg?branch=master)](https://travis-ci.org/nicebro/node-hmr)
-[![Coverage Status](https://coveralls.io/repos/github/nicebro/node-hmr/badge.svg?branch=master)](https://coveralls.io/github/nicebro/node-hmr?branch=master)
+[![Build Status](https://travis-ci.org/serhiinkh/node-hmr.svg?branch=master)](https://travis-ci.org/serhiinkh/node-hmr)
+[![Coverage Status](https://coveralls.io/repos/github/serhiinkh/node-hmr/badge.svg?branch=master)](https://coveralls.io/github/serhiinkh/node-hmr?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## 🔥 Hot Module Replacement for Node.js
