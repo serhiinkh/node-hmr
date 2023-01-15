@@ -27,9 +27,13 @@ class HMR {
     });
   }
 
-  handleFileChange(event, file) {
+  handleFileChange(_, file) {
     const moduleId = path.resolve(this.watchDir, file);
-    const module = this.getCacheByModuleId(moduleId);
+    let module = this.getCacheByModuleId(moduleId);
+
+    if (!module) {
+      module = this.getCacheByModuleId(this.parentModuleName);
+    }
 
     if (module) {
       const modulesToReload = [module.id];
@@ -48,7 +52,7 @@ class HMR {
         console.info({ modulesToReload });
       }
 
-      this.callback();
+      this.callChangeHandler();
     }
   }
 
@@ -71,7 +75,15 @@ class HMR {
 
     const watcher = this.setupWatcher();
     watcher.on('all', this.handleFileChange.bind(this));
-    this.callback();
+    this.callChangeHandler();
+  }
+
+  callChangeHandler() {
+    try {
+      this.callback();
+    } catch (err) {
+      console.error(err);
+    }
   }
 }
 
