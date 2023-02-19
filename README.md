@@ -30,11 +30,47 @@ hmr(() => {
   require('./path_to_your_script');
 });
 ```
+
+
+
+
 ## How to use it with frameworks
 You should split your application into two parts first is server setup and second is application module.
 Below are examples of how to use it with some popular frameworks.
 
-## Express.js with HMR example
+
+## Typescript + Express.js example
+`app.ts`
+```ts
+import express, { Application, Request, Response, NextFunction, } from 'express';
+const app: Application = express();
+
+app.get('/', (req: Request, res: Response, next: NextFunction) => {
+  res.send('Express app');
+});
+
+export default app;
+```
+
+`index.ts`
+```ts
+import http from 'http';
+import hmr from 'node-hmr';
+
+let app: http.RequestListener;
+
+hmr(async () => {
+  console.log('Reloading app...');
+  ({ default: app } = await import('./app'));
+});
+
+const server = http.createServer((req, res) => app(req, res));
+
+server.listen(3000);
+```
+
+
+## Express.js example
 
 `app.js`
 ```js
